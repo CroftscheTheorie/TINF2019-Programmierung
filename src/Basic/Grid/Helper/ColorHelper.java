@@ -11,6 +11,25 @@ public class ColorHelper {
         return ColorIndex.valueOf(color.toString()).ordinal();
     }
 
+    public static String ColorToName(Color color){
+        if (Color.YELLOW.equals(color)){
+            return "YEL";
+        }
+        if (Color.RED.equals(color)){
+            return "RED";
+        }
+        if (Color.GREEN.equals(color)){
+            return "GRE";
+        }
+        if (Color.BLUE.equals(color)){
+            return "BLU";
+        }
+        else {
+            return "ERR";
+        }
+
+    }
+
     private enum ColorIndex{
         GREEN(Color.GREEN),
         RED(Color.RED),
