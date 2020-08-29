@@ -23,7 +23,12 @@ public class GridLogicHexagon extends GridLogic {
         if (number >= rows*length){
             return true;
         }
+
         nodes.get(number).setNodeColor(ColorHelper.IndexToColor(colorindex));
+
+        //Check current row number
+        var row = (int) number / length;
+
         // Oben
         if (number-length >= 0){
             if (nodes.get(number - length).getNodeColor() == nodes.get(number).getNodeColor()){
@@ -36,59 +41,118 @@ public class GridLogicHexagon extends GridLogic {
                 return false;
             }
         }
-        // Links-Oben & Links-Unten & Links
-        // Linke Kante
-        if(number % length != 0){
-            //Ungerade
-            if(number % 2 == 1){
-                if (nodes.get(number-1).getNodeColor() == nodes.get(number).getNodeColor()){
-                    return false;
+
+        // Gerade laenge
+        if (length % 2 == 0 || row % 2 == 0){
+
+            // Links-Oben & Links-Unten
+            // Linke Kante
+            if(number % length != 0){
+                //Ungerade
+                if(number % 2 == 1){
+                    if (nodes.get(number-1).getNodeColor() == nodes.get(number).getNodeColor()){
+                        return false;
+                    }
+                    if (number <= nodes.size() - length){
+                        if (nodes.get(number + (length - 1)).getNodeColor() == nodes.get(number).getNodeColor()){
+                            return false;
+                        }
+                    }
                 }
-                if (number <= nodes.size() - length){
-                    if (nodes.get(number + (length - 1)).getNodeColor() == nodes.get(number).getNodeColor()){
+                //Gerade
+                else {
+                    if (nodes.get(number-1).getNodeColor() == nodes.get(number).getNodeColor()){
+                        return false;
+                    }
+                    if (number > length){
+                        if (nodes.get(number - (length + 1)).getNodeColor() == nodes.get(number).getNodeColor()){
+                            return false;
+                        }
+                    }
+                }
+            }
+            // Rechts-Oben & Rechts-Unten
+            if (number % length != length - 1){
+                // Ungerade
+                if (number % 2 == 1){
+                    // Rechts-Oben
+                    if (nodes.get(number + 1).getNodeColor() == nodes.get(number).getNodeColor()){
+                        return false;
+                    }
+                    if (number < nodes.size() - length){
+                        if (nodes.get(number + (length + 1)).getNodeColor() == nodes.get(number).getNodeColor()){
+                            return false;
+                        }
+                    }
+                }
+                // Gerade
+                else {
+                    // Rechts-Oben
+                    if (number > length-1){
+                        if (nodes.get(number - (length-1)).getNodeColor() == nodes.get(number).getNodeColor()){
+                            return false;
+                        }
+                    }
+                    // Rechts-Unten
+                    if (nodes.get(number + 1).getNodeColor() == nodes.get(number).getNodeColor()){
                         return false;
                     }
                 }
             }
-            //Gerade
-            else {
-                if (nodes.get(number-1).getNodeColor() == nodes.get(number).getNodeColor()){
-                    return false;
-                }
-                if (number > length){
-                    if (nodes.get(number - (length + 1)).getNodeColor() == nodes.get(number).getNodeColor()){
-                        return false;
-                    }
-                }
-            }
-        }
-        // Rechts-Oben & Rechts-Unten
-        if (number % length != length - 1){
-            // Ungerade
-            if (number % 2 == 1){
-                // Rechts-Oben
-                if (nodes.get(number + 1).getNodeColor() == nodes.get(number).getNodeColor()){
-                    return false;
-                }
-                if (number < nodes.size() - (length - 1)){
-                    if (nodes.get(number + (length + 1)).getNodeColor() == nodes.get(number).getNodeColor());
-                }
-            }
+        } else {
             // Gerade
-            else {
-                // Rechts-Oben
-                if (number > length-1){
-                    if (nodes.get(number - (length-1)).getNodeColor() == nodes.get(number).getNodeColor()){
+            if (number % 2 == 0){
+                // Nicht Linker Rand
+                if (number % length != 0){
+                    //Links Oben
+                    if (nodes.get((number - 1)).getNodeColor() == nodes.get(number).getNodeColor()){
+                        return false;
+                    }
+                    //Links Unten
+                    if (number < nodes.size() - length){
+                        if (nodes.get(number + (length - 1)).getNodeColor() == nodes.get(number).getNodeColor()){
+                            return false;
+                        }
+                    }
+                }
+                //Nicht rechter Rand
+                if (number % length == length - 1){
+                    // Rechts Oben
+                    if (nodes.get(number + 1).getNodeColor() == nodes.get(number).getNodeColor()){
+                        return false;
+                    }
+                    //Rechts unten
+                    if (number < nodes.size() - length){
+                        if (nodes.get(number + length + 1).getNodeColor() == nodes.get(number).getNodeColor()){
+                            return false;
+                        }
+                    }
+                }
+            } else { //Ungeraden
+                // Nicht linker Rand
+                if (number % length != 0){
+                    // Links-Oben
+                    if (nodes.get(number - length - 1).getNodeColor() == nodes.get(number).getNodeColor()){
+                        return false;
+                    }
+                    // Links-Unten
+                    if (nodes.get(number - 1).getNodeColor() == nodes.get(number).getNodeColor()){
                         return false;
                     }
                 }
-                // Rechts-Unten
-                if (nodes.get(number + 1).getNodeColor() == nodes.get(number).getNodeColor()){
-                    return false;
+                // Nicht rechter Rand
+                if (number % length != length - 1){
+                    // Rechts-Oben
+                    if (nodes.get(number - (length - 1)).getNodeColor() == nodes.get(number).getNodeColor()){
+                        return false;
+                    }
+                    // Rechts-Unten
+                    if (nodes.get(number + 1).getNodeColor() == nodes.get(number).getNodeColor()){
+                        return false;
+                    }
                 }
             }
         }
-        // Links
 
         var fnumber = number + 1;
         for (int i = 0; i < 4; i++) {
@@ -111,5 +175,9 @@ public class GridLogicHexagon extends GridLogic {
             }
             System.out.println();
         }
+    }
+
+    public ArrayList<Node> GetNodeList(){
+        return nodes;
     }
 }

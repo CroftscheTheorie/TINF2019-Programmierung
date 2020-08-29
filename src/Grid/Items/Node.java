@@ -1,6 +1,6 @@
 package Grid.Items;
 
-import java.awt.*;
+import javafx.scene.paint.Color;
 
 public class Node {
     protected Color NodeColor;

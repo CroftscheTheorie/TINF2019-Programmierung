@@ -1,6 +1,6 @@
 package Grid.Helper;
 
-import java.awt.*;
+import javafx.scene.paint.Color;
 
 public class ColorHelper {
     public static Color IndexToColor(int index){

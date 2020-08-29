@@ -1,6 +1,7 @@
 package Grid;
 
 import Grid.Logic.GridLogicHexagon;
+import Grid.Logic.GridLogicSquares;
 
 import java.util.Scanner;
 
@@ -12,13 +13,16 @@ public class GridMain {
         System.out.println("Rows?");
         int rows = s.nextInt();
 
-        /*
-        GridLogicSquares logic = new GridLogicSquares(columns, rows);
-        logic.ColorGrid(0,0,0);
-        logic.PrintGrid();*/
+        int colorindex = (int) (Math.random() * 4);
+
+        GridLogicSquares logic = new GridLogicSquares(length, rows);
+        logic.ColorGrid(0,0,colorindex);
+        logic.PrintGrid();
+
+        System.out.println();
 
         GridLogicHexagon logicHexagon = new GridLogicHexagon(rows, length);
-        logicHexagon.ColorGrid(0, 0);
+        logicHexagon.ColorGrid(0, colorindex);
         logicHexagon.PrintGrid();
     }
 }

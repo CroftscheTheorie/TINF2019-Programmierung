@@ -88,4 +88,8 @@ public class GridLogicSquares extends GridLogic {
             System.out.println();
         }
     }
+
+    public Node[][] getNodes() {
+        return nodes;
+    }
 }
