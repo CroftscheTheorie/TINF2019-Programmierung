@@ -20,16 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Basic/Grid/GridMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Basic/Grid/Helper/ColorHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Basic/Grid/Items/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Basic/Grid/Logic/GridLogic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Basic/Grid/Model/GridModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GridGIU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GridGIU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GridGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GridGUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GridGUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GridGUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panel/DrawingPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Shapes/Hexagon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/GridMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/Helper/ColorHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Helper/ColorHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/Items/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Items/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/Logic/GridLogicHexagon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Logic/GridLogicHexagon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/Logic/GridLogicSquares.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Logic/GridLogicSquares.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +81,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -114,19 +117,24 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.jdks/javafx-sdk-14.0.2.1/lib" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainGUI">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -152,9 +160,10 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Basic.Grid.GridMain" />
+    <configuration name="MainGUI" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="GUI.GridGIU" />
       <module name="TINF2019-Programmierung" />
+      <option name="VM_PARAMETERS" value="--module-path /Users/Silas/.jdks/javafx-sdk-14.0.2.1/lib --add-modules=javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
@@ -163,6 +172,13 @@
       </extension>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTEST" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Grid.GridMain" />
+      <module name="TINF2019-Programmierung" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -204,6 +220,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.MainGUI" />
+      <item itemvalue="Application.MainTEST" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -217,7 +237,10 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1592561235794" duration="2000" />
-      <workItem from="1593160750615" duration="2955000" />
+      <workItem from="1593160750615" duration="6164000" />
+      <workItem from="1598368797062" duration="184000" />
+      <workItem from="1598368992494" duration="12434000" />
+      <workItem from="1598701439439" duration="24436000" />
     </task>
     <servers />
   </component>
@@ -234,76 +257,139 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593162996826">
+    <state x="377" y="220" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598708648573">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="377" y="220" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598708648573" />
     <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593162996826" />
-    <state x="689" y="314" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593162995060">
+    <state x="1019" y="440" key="#com.intellij.ide.util.MemberChooser" timestamp="1598704302644">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="1019" y="440" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598704302644" />
+    <state x="689" y="314" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1598708646923">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="689" y="314" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598708646923" />
     <state x="689" y="314" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593162995060" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1593163440547">
+    <state x="590" y="213" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1598703868300">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593163440547" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1593163440547">
+    <state x="590" y="213" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598703868300" />
+    <state x="701" y="111" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598705529895">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593163440547" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1593163440547">
+    <state x="701" y="111" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598705529895" />
+    <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598713033257">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593163440547" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1593163440547">
+    <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598713033257" />
+    <state x="740" y="230" width="588" height="594" key="FileChooserDialogImpl" timestamp="1598703887682">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593163440547" />
-    <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1593163275488">
+    <state x="740" y="230" width="588" height="594" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598703887682" />
+    <state width="1877" height="352" key="GridCell.Tab.0.bottom" timestamp="1598728218826">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.1.bottom/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593163275488" />
-    <state width="1877" height="352" key="GridCell.Tab.1.center" timestamp="1593163275488">
+    <state width="1877" height="352" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598728218826" />
+    <state width="1877" height="352" key="GridCell.Tab.0.bottom/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593171564666" />
+    <state width="1877" height="352" key="GridCell.Tab.0.center" timestamp="1598728218826">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.1.center/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593163275488" />
-    <state width="1877" height="352" key="GridCell.Tab.1.left" timestamp="1593163275488">
+    <state width="1877" height="352" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598728218826" />
+    <state width="1877" height="352" key="GridCell.Tab.0.center/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593171564665" />
+    <state width="1877" height="352" key="GridCell.Tab.0.left" timestamp="1598728218826">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.1.left/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593163275488" />
-    <state width="1877" height="352" key="GridCell.Tab.1.right" timestamp="1593163275488">
+    <state width="1877" height="352" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598728218826" />
+    <state width="1877" height="352" key="GridCell.Tab.0.left/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593171564665" />
+    <state width="1877" height="352" key="GridCell.Tab.0.right" timestamp="1598728218826">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.1.right/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593163275488" />
+    <state width="1877" height="352" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598728218826" />
+    <state width="1877" height="352" key="GridCell.Tab.0.right/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593171564665" />
+    <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1598728218826">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="352" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598728218826" />
+    <state width="1877" height="352" key="GridCell.Tab.1.bottom/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593171564666" />
+    <state width="1877" height="352" key="GridCell.Tab.1.center" timestamp="1598728218826">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="352" key="GridCell.Tab.1.center/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598728218826" />
+    <state width="1877" height="352" key="GridCell.Tab.1.center/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593171564666" />
+    <state width="1877" height="352" key="GridCell.Tab.1.left" timestamp="1598728218826">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="352" key="GridCell.Tab.1.left/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598728218826" />
+    <state width="1877" height="352" key="GridCell.Tab.1.left/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593171564666" />
+    <state width="1877" height="352" key="GridCell.Tab.1.right" timestamp="1598728218826">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="352" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598728218826" />
+    <state width="1877" height="352" key="GridCell.Tab.1.right/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593171564666" />
+    <state x="440" y="99" key="SettingsEditor" timestamp="1598705118056">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="440" y="99" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598705118056" />
+    <state x="758" y="192" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598371220385">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="758" y="192" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598371220385" />
+    <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598719953855">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598719953855" />
+    <state x="681" y="278" width="1096" height="1038" key="dock-window-1" timestamp="1598722029222">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="681" y="278" width="1096" height="1038" key="dock-window-1/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598722029222" />
+    <state x="571" y="322" width="1096" height="1038" key="dock-window-2" timestamp="1598723952238">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="571" y="322" width="1096" height="1038" key="dock-window-2/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598723952238" />
+    <state x="225" y="237" width="1424" height="1038" key="dock-window-3" timestamp="1598723793055">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="225" y="237" width="1424" height="1038" key="dock-window-3/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598723793055" />
+    <state x="690" y="285" key="extract.method.dialog" timestamp="1598717769560">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="285" key="extract.method.dialog/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598717769560" />
+    <state x="551" y="145" key="new project wizard" timestamp="1598702250027">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="551" y="145" key="new project wizard/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598702250027" />
     <state x="755" y="273" key="refactoring.ChangeSignatureDialog" timestamp="1593161968944">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="755" y="273" key="refactoring.ChangeSignatureDialog/1920.0.1920.1050/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1593161968944" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1598379086762">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050/1920.-368.1080.1890@0.0.1920.1050" timestamp="1598379086762" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Basic/Grid/Logic/GridLogic.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Basic/Grid/GridMain.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Basic/Grid/Logic/GridLogic.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/src/Grid/Logic/GridLogicSquares.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="nodes[2]" />
+        <watch expression="nodes[2]" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

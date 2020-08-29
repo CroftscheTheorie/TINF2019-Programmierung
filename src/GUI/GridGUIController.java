@@ -1,0 +1,164 @@
+package GUI;
+
+import Grid.Helper.ColorHelper;
+import Grid.Logic.GridLogicHexagon;
+import Grid.Logic.GridLogicSquares;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Polygon;
+
+import java.awt.*;
+
+public class GridGUIController {
+
+    @FXML
+    private final static int heightPixel = 720;
+
+    @FXML
+    private final static int widthPixel = 1280;
+
+    @FXML
+    private TextField RowsTextBox;
+
+    @FXML
+    private TextField ColumnsTextBox;
+
+    @FXML
+    private ScrollPane PaneCanvas;
+
+    @FXML
+    private ToggleButton toggleButton;
+
+    //Logic
+    private GridLogicHexagon logicHexagon;
+    private GridLogicSquares logicSquares;
+
+    private static double k = 40;
+
+    public GridGUIController(){
+
+    }
+
+    private void GenerateAndDrawHexagon(int length, int rows){
+        Pane hexMap = new Pane();
+        hexMap.setPrefSize(widthPixel, heightPixel);
+        PaneCanvas.setContent(hexMap);
+        logicHexagon = new GridLogicHexagon(rows, length);
+        logicHexagon.ColorGrid(0, 0);
+        var nodes = logicHexagon.GetNodeList();;
+        double xcoord = k;
+        double ycoord = k;
+
+        for (int i = 0; i < rows; i++) {
+            xcoord = k;
+            ycoord = i * 2 * k + k;
+            for (int j = i * length; j < length + (i * length); j = j +2) {
+                System.out.print(ColorHelper.ColorToName(nodes.get(j).getNodeColor()) + "    ");
+                Polygon hex = new Hexagon(xcoord, ycoord, nodes.get(j).getNodeColor());
+                hexMap.getChildren().add(hex);
+                xcoord = xcoord + 3 * k;
+            }
+            xcoord = 2.5 * k;
+            ycoord = i * 2 * k + 2 * k;
+            System.out.println();
+            System.out.print("    ");
+            for (int k = (i * length) + 1; k < length + (i * length); k = k + 2){
+                System.out.print(ColorHelper.ColorToName(nodes.get(k).getNodeColor()) + "    ");
+                Polygon hex = new Hexagon(xcoord, ycoord, nodes.get(k).getNodeColor());
+                hexMap.getChildren().addAll(hex);
+                xcoord += 3 * this.k;
+            }
+            System.out.println();
+        }
+    }
+
+    private void GenerateAndDrawSquare(int columns, int rows){
+        Pane squareMap = new Pane();
+        squareMap.setPrefSize(widthPixel, heightPixel);
+        PaneCanvas.setContent(squareMap);
+        logicSquares = new GridLogicSquares(columns, rows);
+        logicSquares.ColorGrid(0,0, 0);
+
+        var nodes = logicSquares.getNodes();
+
+        for (int i = 0; i < rows; i++) {
+            int xcoord = 0;
+            int ycoord = i * (int) k;
+            for (int j = 0; j < columns; j++) {
+                System.out.print(ColorHelper.ColorToName(nodes[j][i].getNodeColor()) + " ");
+                Polygon square = new Square(xcoord, ycoord, nodes[j][i].getNodeColor());
+                squareMap.getChildren().add(square);
+                xcoord += k;
+            }
+            System.out.println();
+        }
+    }
+
+    @FXML
+    private void RenderButtonPressed(ActionEvent actionEvent){
+        if (Integer.parseInt(RowsTextBox.getText()) <= 0){
+            // Wrong value
+        }
+        if (Integer.parseInt(ColumnsTextBox.getText()) <= 0){
+            // Wrong value
+        }
+        if (toggleButton.isSelected()){
+            GenerateAndDrawHexagon(Integer.parseInt(ColumnsTextBox.getText()), Integer.parseInt(RowsTextBox.getText()));
+        } else{
+            GenerateAndDrawSquare(Integer.parseInt(ColumnsTextBox.getText()), Integer.parseInt(RowsTextBox.getText()));
+        }
+    }
+
+    @FXML
+    private void ToggleButtonPressed(ActionEvent actionEvent){
+        if (toggleButton.isSelected()){
+            toggleButton.setText("Hexagon");
+        } else {
+            toggleButton.setText("Square");
+        }
+    }
+
+    private class Hexagon extends Polygon {
+        Hexagon(double x, double y, Color color) {
+            /*getPoints().addAll(
+                    x - n/2, y-r,
+                    x + n/2, y-r,
+                    x + n, y,
+                    x + n/2, y+r,
+                    x - n/2, y+r,
+                    x - n, y
+            );*/
+
+            getPoints().addAll(
+                    x - k/2, y - k,
+                    x + k/2 , y - k,
+                    x + k, y,
+                    x + k/2, y + k,
+                    x - k/2, y + k,
+                    x - k, y
+            );
+
+            setFill(color);
+            setStrokeWidth(1);
+            setStroke(Color.BLACK);
+        }
+    }
+
+    private class Square extends  Polygon{
+        Square(double x, double y, Color color){
+            getPoints().addAll(
+                    x, y,
+                    x + k, y,
+                    x + k, y + k,
+                    x, y + k
+            );
+
+            setFill(color);
+        }
+    }
+}

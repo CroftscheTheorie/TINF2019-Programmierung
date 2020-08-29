@@ -1,6 +1,6 @@
-package Basic.Grid.Helper;
+package Grid.Helper;
 
-import java.awt.*;
+import javafx.scene.paint.Color;
 
 public class ColorHelper {
     public static Color IndexToColor(int index){
@@ -9,6 +9,25 @@ public class ColorHelper {
 
     public static int ColorToIndex(Color color){
         return ColorIndex.valueOf(color.toString()).ordinal();
+    }
+
+    public static String ColorToName(Color color){
+        if (Color.YELLOW.equals(color)){
+            return "YEL";
+        }
+        if (Color.RED.equals(color)){
+            return "RED";
+        }
+        if (Color.GREEN.equals(color)){
+            return "GRE";
+        }
+        if (Color.BLUE.equals(color)){
+            return "BLU";
+        }
+        else {
+            return "ERR";
+        }
+
     }
 
     private enum ColorIndex{
