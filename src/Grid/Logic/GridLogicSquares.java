@@ -1,10 +1,7 @@
-package Basic.Grid.Logic;
+package Grid.Logic;
 
-import Basic.Grid.Helper.ColorHelper;
-import Basic.Grid.Items.Node;
-
-import java.awt.*;
-import java.util.ArrayList;
+import Grid.Helper.ColorHelper;
+import Grid.Items.Node;
 
 public class GridLogicSquares extends GridLogic {
     private int counter = 1;

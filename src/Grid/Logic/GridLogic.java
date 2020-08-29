@@ -1,4 +1,4 @@
-package Basic.Grid.Logic;
+package Grid.Logic;
 
 public abstract class GridLogic {
     public LogicType logicType;

@@ -1,4 +1,4 @@
-package Basic.Grid.Helper;
+package Grid.Helper;
 
 import java.awt.*;
 

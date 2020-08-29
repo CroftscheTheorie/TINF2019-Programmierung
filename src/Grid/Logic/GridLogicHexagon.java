@@ -1,7 +1,7 @@
-package Basic.Grid.Logic;
+package Grid.Logic;
 
-import Basic.Grid.Helper.ColorHelper;
-import Basic.Grid.Items.Node;
+import Grid.Helper.ColorHelper;
+import Grid.Items.Node;
 
 import java.util.ArrayList;
 

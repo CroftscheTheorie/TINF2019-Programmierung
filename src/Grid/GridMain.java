@@ -1,7 +1,6 @@
-package Basic.Grid;
+package Grid;
 
-import Basic.Grid.Logic.GridLogicHexagon;
-import Basic.Grid.Logic.GridLogicSquares;
+import Grid.Logic.GridLogicHexagon;
 
 import java.util.Scanner;
 

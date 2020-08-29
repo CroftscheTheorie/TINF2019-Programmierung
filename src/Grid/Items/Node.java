@@ -1,7 +1,6 @@
-package Basic.Grid.Items;
+package Grid.Items;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 public class Node {
     protected Color NodeColor;
