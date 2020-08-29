@@ -6,17 +6,16 @@ import Basic.Grid.Items.Node;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class GridLogicSquares {
-    private int columns;
-    private int rows;
+public class GridLogicSquares extends GridLogic {
     private int counter = 1;
 
     private Node[][] nodes;
 
-    public GridLogicSquares(int columns, int rows){
-        this.columns = columns;
+    public GridLogicSquares(int length, int rows){
+        this.logicType = LogicType.SQUARES;
+        this.length = length;
         this.rows = rows;
-        this.nodes = new Node[columns][rows];
+        this.nodes = new Node[length][rows];
 
         for (int i = 0; i < nodes.length; i++) {
             for (int j = 0; j < nodes[i].length; j++) {
@@ -45,7 +44,7 @@ public class GridLogicSquares {
                 return false;
             }
         }
-        if ((column+1) < columns){
+        if ((column+1) < length){
             if(nodes[column+1][row].getNodeColor() == nodes[column][row].getNodeColor()){
                 return false;
             }
@@ -55,7 +54,7 @@ public class GridLogicSquares {
                 return false;
             }
         }
-        if ((row-1 >= 0) && (column+1 < columns )){
+        if ((row-1 >= 0) && (column+1 < length )){
             if (nodes[column+1][row-1].getNodeColor() == nodes[column][row].getNodeColor()){
                 return false;
             }
@@ -65,14 +64,14 @@ public class GridLogicSquares {
                 return false;
             }
         }
-        if ((row+1 <= rows) && (column+1 > columns)){
+        if ((row+1 <= rows) && (column+1 > length)){
             if (nodes[column+1][row+1].getNodeColor() == nodes[column][row].getNodeColor()){
                 return false;
             }
         }
         var frow = row;
         var fcol = column+1;
-        if (fcol >= columns){
+        if (fcol >= length){
             frow = row + 1;
             fcol = 0;
         }
@@ -86,7 +85,7 @@ public class GridLogicSquares {
 
     public void PrintGrid(){
         for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
+            for (int j = 0; j < length; j++) {
                 System.out.print(ColorHelper.ColorToName(nodes[j][i].getNodeColor()) + " ");
             }
             System.out.println();

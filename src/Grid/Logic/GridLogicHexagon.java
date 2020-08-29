@@ -5,13 +5,12 @@ import Basic.Grid.Items.Node;
 
 import java.util.ArrayList;
 
-public class GridLogicHexagon {
-    private int rows;
-    private int length;
+public class GridLogicHexagon extends GridLogic {
 
     private ArrayList<Node> nodes = new ArrayList<>();
 
     public GridLogicHexagon(int rows, int length){
+        this.logicType = LogicType.HEXAGON;
         this.rows = rows;
         this.length = length;
 
