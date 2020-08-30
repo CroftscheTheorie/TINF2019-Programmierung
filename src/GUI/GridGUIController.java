@@ -12,16 +12,18 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
 
-import java.awt.*;
-
 public class GridGUIController {
 
+    // Static variables
     @FXML
     private final static int heightPixel = 720;
 
     @FXML
     private final static int widthPixel = 1280;
 
+    private static double drawableLength = 40;
+
+    // Non-static variables
     @FXML
     private TextField RowsTextBox;
 
@@ -34,11 +36,9 @@ public class GridGUIController {
     @FXML
     private ToggleButton toggleButton;
 
-    //Logic
+    // Logic
     private GridLogicHexagon logicHexagon;
     private GridLogicSquares logicSquares;
-
-    private static double k = 40;
 
     public GridGUIController(){
 
@@ -51,27 +51,27 @@ public class GridGUIController {
         logicHexagon = new GridLogicHexagon(rows, length);
         logicHexagon.ColorGrid(0, 0);
         var nodes = logicHexagon.GetNodeList();;
-        double xcoord = k;
-        double ycoord = k;
+        double xcoord = drawableLength;
+        double ycoord = drawableLength;
 
         for (int i = 0; i < rows; i++) {
-            xcoord = k;
-            ycoord = i * 2 * k + k;
+            xcoord = drawableLength;
+            ycoord = i * 2 * drawableLength + drawableLength;
             for (int j = i * length; j < length + (i * length); j = j +2) {
                 System.out.print(ColorHelper.ColorToName(nodes.get(j).getNodeColor()) + "    ");
                 Polygon hex = new Hexagon(xcoord, ycoord, nodes.get(j).getNodeColor());
                 hexMap.getChildren().add(hex);
-                xcoord = xcoord + 3 * k;
+                xcoord = xcoord + 3 * drawableLength;
             }
-            xcoord = 2.5 * k;
-            ycoord = i * 2 * k + 2 * k;
+            xcoord = 2.5 * drawableLength;
+            ycoord = i * 2 * drawableLength + 2 * drawableLength;
             System.out.println();
             System.out.print("    ");
             for (int k = (i * length) + 1; k < length + (i * length); k = k + 2){
                 System.out.print(ColorHelper.ColorToName(nodes.get(k).getNodeColor()) + "    ");
                 Polygon hex = new Hexagon(xcoord, ycoord, nodes.get(k).getNodeColor());
                 hexMap.getChildren().addAll(hex);
-                xcoord += 3 * this.k;
+                xcoord += 3 * this.drawableLength;
             }
             System.out.println();
         }
@@ -88,12 +88,12 @@ public class GridGUIController {
 
         for (int i = 0; i < rows; i++) {
             int xcoord = 0;
-            int ycoord = i * (int) k;
+            int ycoord = i * (int) drawableLength;
             for (int j = 0; j < columns; j++) {
                 System.out.print(ColorHelper.ColorToName(nodes[j][i].getNodeColor()) + " ");
                 Polygon square = new Square(xcoord, ycoord, nodes[j][i].getNodeColor());
                 squareMap.getChildren().add(square);
-                xcoord += k;
+                xcoord += drawableLength;
             }
             System.out.println();
         }
@@ -135,12 +135,12 @@ public class GridGUIController {
             );*/
 
             getPoints().addAll(
-                    x - k/2, y - k,
-                    x + k/2 , y - k,
-                    x + k, y,
-                    x + k/2, y + k,
-                    x - k/2, y + k,
-                    x - k, y
+                    x - drawableLength /2, y - drawableLength,
+                    x + drawableLength /2 , y - drawableLength,
+                    x + drawableLength, y,
+                    x + drawableLength /2, y + drawableLength,
+                    x - drawableLength /2, y + drawableLength,
+                    x - drawableLength, y
             );
 
             setFill(color);
@@ -153,9 +153,9 @@ public class GridGUIController {
         Square(double x, double y, Color color){
             getPoints().addAll(
                     x, y,
-                    x + k, y,
-                    x + k, y + k,
-                    x, y + k
+                    x + drawableLength, y,
+                    x + drawableLength, y + drawableLength,
+                    x, y + drawableLength
             );
 
             setFill(color);

@@ -4,8 +4,6 @@ import Grid.Helper.ColorHelper;
 import Grid.Items.Node;
 
 public class GridLogicSquares extends GridLogic {
-    private int counter = 1;
-
     private Node[][] nodes;
 
     public GridLogicSquares(int length, int rows){

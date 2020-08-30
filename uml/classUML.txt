@@ -1,0 +1,91 @@
+@startuml
+class GridGUI{
+ +{static}main(String[] args)
+ +start(Stage primaryStage)
+}
+
+class GridGUIController{
+ -{static}heightPixel : Integer
+ -{static}widthPixel : Integer
+ -{static}drawableLength : Integer
+ -RowsTextBox : TextField
+ -ColumnsTextBox : TextField
+ -PaneCanvas : ScrollPane
+ -toggleButton : ToggleButton
+ -logicHexagon : GridLogicHexagon
+ -logicSquares : GridLogicSquares
+ +GridGUIController()
+ -GenerateAndDrawHexagon(Integer length, Integer rows)
+ -GenerateAndDrawSquare(Integer  columns, Integer rows)
+ -RenderButtonPressed(ActionEvent actionEvent)
+ -ToggleButtonPressed(ActionEvent actionEvent)
+}
+
+class Hexagon<? extends Polygon>{
+ -Hexagon(Double x, Double y, Color color)
+}
+
+class Square<? extends Polygon>{
+ -Square(Double x, Double y, Color color)
+}
+
+enum LogicType{
+ SQUARES
+ HEXAGON
+}
+
+abstract class GridLogic{
+ +logicType : LogicType
+ #rows : Integer
+ #length : Integer
+}
+
+class GridLogicHexagon extends GridLogic{
+ -nodes : ArrayList<Node>
+ +GridLogicHexagon(Integer rows, Integer length)
+ +ColorGrid(Integer number, Integer colorindex) : Boolean
+ +PrintGrid()
+ +GetNodeList() : ArrayList<Node>
+}
+
+class GridLogicSquares extends GridLogic{
+ -nodes : Node[][]
+ +GridLogicSquares(Integer length, Integer rows)
+ +ColorGrid(Integer column, Integer row, Integer colorindex) : Boolean
+ +PrintGrid()
+ +getNodes() : Node[][]
+}
+
+class Node{
+ #NodeColor : Color
+ +setNodeColor(Color nodecolor)
+ +getNodeColor() : Color
+}
+
+enum ColorIndex{
+ GREEN
+ RED
+ BLUE
+ YELLOW
+ -color : Color
+ ColorIndex(Color color)
+}
+
+class ColorHelper{
+ +{static}IndexToColor() : Color
+ +{static}ColorToIndex() : Integer
+ +{static}ColorToName() : String
+}
+
+GridGUIController +-- Hexagon
+GridGUIController +-- Square
+GridLogic -- LogicType
+ColorHelper -- ColorIndex
+GridLogicHexagon "many" -- "many" Node
+GridLogicSquares "many" -- "many" Node
+GridGUI "1" -- "1" GridGUIController
+GridGUIController "1" -- "many" GridLogicHexagon
+GridGUIController "1" -- "many" GridLogicSquares
+GridLogicSquares "1" -- "1" ColorHelper
+GridLogicHexagon "1" -- "1" ColorHelper
+@enduml
