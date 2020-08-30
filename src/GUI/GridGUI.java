@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class GridGIU extends Application {
+public class GridGUI extends Application {
 
     public static void main(String[] args) {
         launch(args);
