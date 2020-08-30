@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="javafx" build-on-make="true" name="TINF2019-Programmierung">
+  <artifact type="javafx" name="TINF2019-Programmierung">
     <output-path>$PROJECT_DIR$/out/artifacts/TINF2019_Programmierung</output-path>
     <properties id="javafx-properties">
       <options>
